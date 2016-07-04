@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/strator-dev/docker-seafile-client.png?label=ready&title=Ready)](https://waffle.io/strator-dev/docker-seafile-client)
 ## Seafile Docker image
 
 * github reference project : https://github.com/strator-dev/docker-seafile-client/
