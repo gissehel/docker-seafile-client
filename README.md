@@ -105,4 +105,57 @@ sudo docker \
   stratordev/seafile-client
 ```
 
+### Using crane as docker manager
+
+If you're using [**crane**](https://github.com/michaelsauter/crane) as a docker manager tool, here is a [crane.yaml](doc/crane.yaml) that match the first example (from the *Easy usage* section)
+
+```yaml
+containers:
+    seafile-client-add:
+        image: "stratordev/seafile-client"
+        run:
+            tty: true
+            interactive: true
+            rm: true
+            volume:
+                - "/opt/dockerstore/seafile-client:/data"
+            env:
+                - "APP_UID=1000"
+                - "APP_GID=1000"
+            cmd: "/sbin/my_init -- /addsync"
+    seafile-client:
+        image: "stratordev/seafile-client"
+        run:
+            detach: true
+            volume:
+                - "/opt/dockerstore/seafile-client:/data"
+            env:
+                - "APP_UID=1000"
+                - "APP_GID=1000"
+```
+
+You then just have to type to start the server:
+
+```bash
+$ crane run seafile-client
+```
+
+And then, you can add a new folder by using the command:
+
+```bash
+$ crane run seafile-client-add
+Forlder name ?
+MyFolder
+Folder ID ?
+d1abee9b-3dc2-4062-86d5-0e010e9f9a22
+Server url ?
+https://seafile.example.com:8080
+login mail ?
+admin@example.com
+Enter password for user admin@example.com :
+
+$ crane run seafile-client
+```
+
+**Note** : Don't forget to re-run `crane run seafile-client` each time you've added a new folder.
 

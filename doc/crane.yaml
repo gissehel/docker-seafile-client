@@ -1,0 +1,26 @@
+containers:
+    seafile-client-add:
+        image: "stratordev/seafile-client"
+        run:
+            tty: true
+            interactive: true
+            rm: true
+            volume:
+                - "/opt/dockerstore/seafile-client:/data"
+            env:
+                - "APP_UID=1000"
+                - "APP_GID=1000"
+            cmd: "/sbin/my_init -- /addsync"
+    seafile-client:
+        image: "stratordev/seafile-client"
+        run:
+            detach: true
+            volume:
+                - "/opt/dockerstore/seafile-client:/data"
+            env:
+                - "APP_UID=1000"
+                - "APP_GID=1000"
+
+
+
+    
