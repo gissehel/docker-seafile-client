@@ -159,3 +159,9 @@ $ crane run seafile-client
 
 **Note** : Don't forget to re-run `crane run seafile-client` each time you've added a new folder.
 
+### Related projects
+
+* [docker-seafile](https://github.com/strator-dev/docker-seafile/) : A docker image for seafile server
+* [docker-seafile-client](https://github.com/strator-dev/docker-seafile-client/) : A docker image for seafile client (interface less)
+* [seafile](https://www.seafile.com/) : The seafile project main page
+* [docker](http://docker.com/) : The docker project
