@@ -53,6 +53,9 @@ ln -s "${DATA_CLIENT_DIR}" "${SEAFILE_CLIENT_DIR}"
 ln -s "${ADD_SYNC}" "${ADD_SYNC_ROOT}"
 ln -s "${START_CLIENT}" "${START_CLIENT_AUTOSTART}"
 
+# Remove /etc/service/syslog-forwarder as logs are getting in the way of the interactive script
+rm -rf /etc/service/syslog-forwarder
+
 #------------------------------------------------
 cat <<__END__ > "${CREATE_USER}"
 [ -z "\${APP_UID}" ] && APP_UID=0
