@@ -85,8 +85,10 @@ You'll find your folder in `/this/will/be/your/data/path/files/MyFolder`
 
 ### Configuration
 
-* **APP_UID** : The UID for all the files in the data folder. You may change that from one launch to another. Default value is "0" (root)
-* **APP_GID** : The GID for all the files in the data folder. You may change that from one launch to another. Default value is "0" (root)
+| Variable | Usage |
+|----------|-------|
+| **APP_UID** | The UID for all the files in the data folder. You may change that from one launch to another. Default value is "0" (root) |
+| **APP_GID** | The GID for all the files in the data folder. You may change that from one launch to another. Default value is "0" (root) |
 
 ### Advanced usage
 
