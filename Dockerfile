@@ -1,4 +1,8 @@
 FROM phusion/baseimage:0.9.18
+MAINTAINER Gissehel <public-dev-github-docker-seafile-client@gissehel.org>
+
+ARG BUILD_DATE
+ARG VCS_REF
 
 LABEL org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.name="Seafile client" \
