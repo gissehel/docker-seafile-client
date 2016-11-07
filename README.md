@@ -42,7 +42,7 @@ sudo docker \
   -v "/this/will/be/your/data/path:/data" \
   --name="seafile-client-add" \
   stratordev/seafile-client \
-  /sbin/my_init -- /addsync
+  /addsync
 ```
 
 You'll prompt few questions :
@@ -125,7 +125,7 @@ containers:
             env:
                 - "APP_UID=1000"
                 - "APP_GID=1000"
-            cmd: "/sbin/my_init -- /addsync"
+            cmd: "/addsync"
     seafile-client:
         image: "stratordev/seafile-client"
         run:
