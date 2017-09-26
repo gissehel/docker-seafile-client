@@ -62,7 +62,7 @@ cat <<__END__ > "${CREATE_USER}"
 [ -z "\${APP_GID}" ] && APP_GID=0
 sed -i 's/^${USER_NAME}:.*//' /etc/passwd
 sed -i 's/^${GROUP_NAME}:.*//' /etc/group
-echo "${USER_NAME}:x:\${APP_UID}:\${APP_GID}:${GROUP_NAME}:/app:/bin/false" >> /etc/passwd
+echo "${USER_NAME}:x:\${APP_UID}:\${APP_GID}:${GROUP_NAME}:${HOME_DIR}:/bin/false" >> /etc/passwd
 echo "${GROUP_NAME}:x:\${APP_GID}:${USER_NAME}" >> /etc/group
 mkdir -p "${DATA_CCNET_DIR}"
 mkdir -p "${DATA_CLIENT_DIR}"
