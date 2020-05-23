@@ -1,9 +1,9 @@
-[![](https://images.microbadger.com/badges/image/stratordev/seafile-client.svg)](http://microbadger.com/images/stratordev/seafile-client "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/stratordev/seafile-client.svg)](http://microbadger.com/images/stratordev/seafile-client "Get your own version badge on microbadger.com")
+[![](https://images.microbadger.com/badges/image/gissehel/seafile-client.svg)](http://microbadger.com/images/gissehel/seafile-client "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/gissehel/seafile-client.svg)](http://microbadger.com/images/gissehel/seafile-client "Get your own version badge on microbadger.com")
 
 ## Seafile Docker image
 
-* github reference project : https://github.com/strator-dev/docker-seafile-client/
-* docker hub referece image : https://hub.docker.com/r/stratordev/seafile-client/
+* github reference project : https://github.com/gissehel/docker-seafile-client/
+* docker hub referece image : https://hub.docker.com/r/gissehel/seafile-client/
 
 ### Concept
 
@@ -25,7 +25,7 @@ sudo docker \
   -e "APP_GID=1001" \
   -v "/this/will/be/your/data/path:/data" \
   --name="seafile-client" \
-  stratordev/seafile-client
+  gissehel/seafile-client
 ```
 
 Your container is now syncing... nothing, but you're ready to add a new folder to sync.
@@ -41,7 +41,7 @@ sudo docker \
   -e "APP_GID=1001" \
   -v "/this/will/be/your/data/path:/data" \
   --name="seafile-client-add" \
-  stratordev/seafile-client \
+  gissehel/seafile-client \
   /addsync
 ```
 
@@ -78,7 +78,7 @@ sudo docker \
   -e "APP_GID=1001" \
   -v "/this/will/be/your/data/path:/data" \
   --name="seafile-client" \
-  stratordev/seafile-client
+  gissehel/seafile-client
 ```
 
 You'll find your folder in `/this/will/be/your/data/path/files/MyFolder` 
@@ -105,7 +105,7 @@ sudo docker \
   -v "/home/user/.config/seafile:/data/config" \
   -v "/home/user/my_seafile_dir:/data/files" \
   --name="seafile-client" \
-  stratordev/seafile-client
+  gissehel/seafile-client
 ```
 
 ### Using crane as docker manager
@@ -115,7 +115,7 @@ If you're using [**crane**](https://github.com/michaelsauter/crane) as a docker 
 ```yaml
 containers:
     seafile-client-add:
-        image: "stratordev/seafile-client"
+        image: "gissehel/seafile-client"
         run:
             tty: true
             interactive: true
@@ -127,7 +127,7 @@ containers:
                 - "APP_GID=1000"
             cmd: "/addsync"
     seafile-client:
-        image: "stratordev/seafile-client"
+        image: "gissehel/seafile-client"
         run:
             detach: true
             volume:
@@ -164,7 +164,7 @@ $ crane run seafile-client
 
 ### Related projects
 
-* [docker-seafile](https://github.com/strator-dev/docker-seafile/) : A docker image for seafile server
-* [docker-seafile-client](https://github.com/strator-dev/docker-seafile-client/) : A docker image for seafile client (interface less)
+* [docker-seafile](https://github.com/gissehel/docker-seafile/) : A docker image for seafile server
+* [docker-seafile-client](https://github.com/gissehel/docker-seafile-client/) : A docker image for seafile client (interface less)
 * [seafile](https://www.seafile.com/) : The seafile project main page
 * [docker](http://docker.com/) : The docker project
